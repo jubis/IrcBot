@@ -1,5 +1,5 @@
 
-public interface BottiKuuntelija {
+public interface BottiKuuntelija extends Comparable<BottiKuuntelija> {
 	
 	/**
 	 * Kuuntelijan prioriteetti määrittää, missä järjestyksessä se saa
