@@ -36,4 +36,8 @@ public class Botti2 extends PircBot {
 	private void jarjestaKuuntelijat() {
 		Collections.sort( this.kuuntelijat );
 	}
+	
+	public void lahetaViesti( String viesti, String kanava ) {
+		this.sendMessage( kanava, viesti );
+	}
 }
