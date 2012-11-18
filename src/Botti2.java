@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.jibble.pircbot.PircBot;
 
-public class Botti2 extends PircBot {
+public class Botti2 extends PircBot implements HelppoBotti {
 	private List<BottiKuuntelija> kuuntelijat = new ArrayList<BottiKuuntelija>();
 	
 	public Botti2() {
@@ -37,6 +37,7 @@ public class Botti2 extends PircBot {
 		Collections.sort( this.kuuntelijat );
 	}
 	
+	@Override
 	public void lahetaViesti( String viesti, String kanava ) {
 		this.sendMessage( kanava, viesti );
 	}
