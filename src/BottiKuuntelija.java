@@ -31,8 +31,9 @@ public interface BottiKuuntelija extends Comparable<BottiKuuntelija> {
 	 * Kutsutaan myös, vaikka käyttäjä olisi botti itse. 
 	 * 
 	 * @param nick Uuden käyttäjän nick
+	 * @param kanava Kertoo, millä kanavalla tämä on tapahtunut
 	 */
-	public void kanavallaUusiKayttaja( String nick );
+	public void kanavallaUusiKayttaja( String nick, String kanava );
 	
 	/**
 	 * Kutsutaan, kun kanavalta on poistunut käyttäjä.
@@ -41,6 +42,7 @@ public interface BottiKuuntelija extends Comparable<BottiKuuntelija> {
 	 * Huom! Kutsuhetkellä käyttäjä on jo poistunut
 	 * 
 	 * @param nick Poistuneen käyttäjän nick
+	 * @param kanava Kertoo, millä kanavalla tämä on tapahtunut
 	 */
-	public void kanavaltaLahtiKayttaja( String nick );
+	public void kanavaltaLahtiKayttaja( String nick, String kanava );
 }

@@ -15,9 +15,9 @@ public abstract class AbstraktiBottiKuuntelija implements BottiKuuntelija {
 		return false;
 	}
 	@Override
-	public void kanavallaUusiKayttaja( String nick ) {}
+	public void kanavallaUusiKayttaja( String nick, String kanava ) {}
 	@Override
-	public void kanavaltaLahtiKayttaja( String nick ) {}
+	public void kanavaltaLahtiKayttaja( String nick, String kanava ) {}
 	
 	@Override
 	public int compareTo( BottiKuuntelija vertailtava ) {
