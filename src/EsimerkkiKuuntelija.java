@@ -3,6 +3,9 @@
  * Se myös tervehtii aina uusia käyttäjiä kanavalla.
  * 
  * @author matia_000
+ * 
+ * Jotta kuuntelijan kirjoittaminen olisi mahdollisimman helppoa,
+ * peritään meitä auttava luokka AbstraktiBottiKuuntelija.
  */
 public class EsimerkkiKuuntelija extends AbstraktiBottiKuuntelija {
 
