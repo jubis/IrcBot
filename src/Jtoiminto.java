@@ -144,4 +144,12 @@ public class Jtoiminto implements BottiKuuntelija {
 			J.uusiViesti(kysy(), "", "");
 		}
 	}
+
+	@Override
+	public void kanavallaUusiKayttaja( String nick, String kanava ) {	
+	}
+
+	@Override
+	public void kanavaltaLahtiKayttaja( String nick, String kanava ) {
+	}
 }
