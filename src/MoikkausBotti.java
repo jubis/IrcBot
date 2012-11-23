@@ -4,7 +4,15 @@ import java.util.Random;
 // Botti tervehtii jokaista uutta kayttajaa ja kertoo vitsin
 public class MoikkausBotti extends AbstraktiBottiKuuntelija {
 	
-	private String[] vitsit;
+	private String[] vitsit = {
+			"Muut olivat variksia, Janne Kaki", 
+			"Muut eivat koskeneet elainlaakareihin, Eevert Saukkokoski", 
+			"Muilla on suora, Mikko Latva-Kayra", 
+			"Muut olivat vuoria, Tomi Laakso", 
+			"Muuto olivat vuoria, Vesa Laakso", 
+			"KAPEEE!!! - Kato googlest!",
+			"Muut juoksi, Aleksi Talsi"
+			};
 	private Random rand = new Random();
 
 	public MoikkausBotti(HelppoBotti botti) {
@@ -21,20 +29,21 @@ public class MoikkausBotti extends AbstraktiBottiKuuntelija {
 		double luku = rand.nextDouble();
 		if (luku<0.33){
 			return "Kanavan " + kanava + " yleisena fasilitaattorina" +
-					" toivotan sinut tervetulleeksi kanavalle" + nick + "!" +
-							" Tassa viela vitsi: ";
+					" toivotan sut tervetulleeksi kanavalle" + nick + "! ";
 		} else if (luku<0.66){
-			return nick + " kuka olet? Mita teet meidan kanavalla? " +
-					"Voit jaada, jos kerrot paremman vitsin kun tama: ";
+			return nick + " kuka sa oot? Mita sa teet meidan kanavalla? " +
+					"No ihan sama! ";
 		} else {
-			return "Hei " + nick + ", taitaa olla tylsaa, kun tulit kanavalle"
-					+ kanava + "? Tassa sulle vitsi!";
+			return "Hei " + nick + ", taitaa olla tylsaa, kun tulit "
+					+ kanava + "lle? ";
 		}
 	}
 	
-	// Arpoo vitsin taulukkoon talletetuista vitseista
-	public String annaVitsi(){
-		return vitsit[rand.nextInt(vitsit.length)];
+	
+	public String valitseVitsi(){
+		return "Valitse minkalaisen vitsin haluut kuulla kirjoittamalla sen" +
+				" komento: !jannekaki, !eevert, !mikkolk, " +
+				"!tomi, !vesa, !kape, !aleksi";
 	}
 	
 	// Kun havaitaan uusi kayttaja, tulostetaan siita tiedot ja lahetetaan 
@@ -45,6 +54,33 @@ public class MoikkausBotti extends AbstraktiBottiKuuntelija {
 				" liittyi kanavalle " + kanava);
 		
 		this.botti.lahetaViesti(this.tervetuloa(nick, kanava) + 
-				this.annaVitsi(), kanava);
+				this.valitseVitsi(), kanava);
+	}
+	
+	@Override
+	public boolean uusiViesti( String viesti, String kanava, String lahettaja ) {
+		String vastaus = null;
+		if (viesti.equals("!jannekaki")){
+			vastaus = this.vitsit[0];
+		} else if (viesti.equals("!eevert")){
+			vastaus = this.vitsit[1];
+		} else if (viesti.equals("!mikkolk")){
+			vastaus = this.vitsit[2];
+		} else if (viesti.equals("!tomi")){
+			vastaus = this.vitsit[3];
+		} else if (viesti.equals("!vesa")){
+			vastaus = this.vitsit[4];
+		} else if (viesti.equals("!kape")){
+			vastaus = this.vitsit[5];
+		} else if (viesti.equals("!aleksi")){
+			vastaus = this.vitsit[6];
+		}
+		if (vastaus!=null /*&& lahettaja!=this.botti*/){
+			// TODO miten ilmoittaa, etta oma botti ei saa olla lahettaja?
+			this.botti.lahetaViesti(vastaus, kanava);
+			return false;
+		} else {
+			return false;
+		}
 	}
 }
