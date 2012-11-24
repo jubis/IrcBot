@@ -8,6 +8,9 @@ public class Botti2 extends PircBot implements HelppoBotti {
 	private List<BottiKuuntelija> kuuntelijat = new ArrayList<BottiKuuntelija>();
 	
 	public Botti2() {
+		this.setLogin( "tester" );
+		this.setName( "Olo2Botti" );
+		
 	}
 	
 	@Override
