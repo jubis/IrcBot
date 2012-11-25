@@ -210,14 +210,14 @@ public class Jtoiminto implements BottiKuuntelija {
 	
 	}
 
-	public static void main(String[] args) {
-		
-		Jtoiminto J = new Jtoiminto(null, null);
-		System.out.println("mita haluat tehda? (!pituus / !wiki):");
-		while(true){
-			J.uusiViesti(J.kysy(), "", "");
-		}
-	}
+//	public static void main(String[] args) {
+//		
+//		Jtoiminto J = new Jtoiminto(null, null);
+//		System.out.println("mita haluat tehda? (!pituus / !wiki):");
+//		while(true){
+//			J.uusiViesti(J.kysy(), "", "");
+//		}
+//	}
 	
 
 }
