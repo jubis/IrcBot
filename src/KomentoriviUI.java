@@ -74,8 +74,8 @@ public class KomentoriviUI {
 			System.out.println( "Ei yhtään kanavaa" );
 			this.liityKanavalle();
 		} else {
+			System.out.println( "Kanavat:" );
 			for( String kanava : this.botti.getChannels() ) {
-				System.out.println( "Kanavat:" );
 				System.out.println( "    " + kanava );
 			}
 		}
