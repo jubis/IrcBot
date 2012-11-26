@@ -28,23 +28,21 @@ import java.net.URL;
  * Heitin prioriteetiksi 10.
  */
 
-public class Jtoiminto implements BottiKuuntelija {
+public class Jtoiminto extends AbstraktiBottiKuuntelija {
 	
 	/*
 	 * http://en.wikipedia.org/w/api.php
 	 * prop=extracts (ex)
 	 * Returns plain-text or limited HTML extracts of the given page(s)
 	 */
-	private int merkkimaara = 500;	
-//	private PircBot pircbot;	
+	private int merkkimaara = 500;		
 	private HelppoBotti botti;
 	private BufferedReader lukija = new BufferedReader(new 
 			InputStreamReader(System.in));
 
 	
-	public Jtoiminto(PircBot pircbot, HelppoBotti botti) {
-	//this.pircbot = pircbot;
-	this.botti = botti;
+	public Jtoiminto(HelppoBotti botti) {
+		super(botti);
 	}
 	
 	private String annaApiurl() {
@@ -146,7 +144,7 @@ public class Jtoiminto implements BottiKuuntelija {
 		}
 		//jos tuloksessa on sana REDIRECT, haku on palauttanut redirect-sivun
 		if(tulos.contains("REDIRECT")){
-			System.out.println("palautti redirect-sivun, yrita muotoilla uudestaan");
+			this.botti.lahetaViesti("palautti redirect-sivun, yrita muotoilla uudestaan", kanava );
 			return false;
 		}
 

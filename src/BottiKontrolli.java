@@ -43,9 +43,10 @@ public class BottiKontrolli extends AbstraktiBottiKuuntelija {
 					break;
 				default:
 					this.kerroOhjeet( kanava );
+					break;
 			}
 		} else {
-			this.kerroKanavat( kanava );
+			this.kerroOhjeet( kanava );
 		}
 	}
 

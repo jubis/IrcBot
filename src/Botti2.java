@@ -107,7 +107,7 @@ public class Botti2 extends PircBot implements HelppoBotti {
 	
 	private void lisaaKaikkiKuuntelijat() {
 		BottiKuuntelija[] kuuntelijat = { new JaarittelijaBotti( this ),
-									      new Jtoiminto( this, this ),
+									      new Jtoiminto( this ),
 									      new MoikkausBotti( this ),
 									      new BottiKontrolli( this ) };
 		for( BottiKuuntelija kuuntelija : kuuntelijat ) {
