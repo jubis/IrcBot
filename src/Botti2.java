@@ -9,8 +9,6 @@ public class Botti2 extends PircBot implements HelppoBotti {
 	private KomentoriviUI ui;
 	
 	public Botti2() {
-		this.setVerbose( true );
-		
 		this.setLogin( "tester" );
 		
 		this.lisaaKaikkiKuuntelijat();
