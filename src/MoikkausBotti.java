@@ -10,7 +10,7 @@ public class MoikkausBotti extends AbstraktiBottiKuuntelija {
 			"Muilla on suora, Mikko Latva-Kayra", 
 			"Muut olivat vuoria, Tomi Laakso", 
 			"Muuto olivat vuoria, Vesa Laakso", 
-			"KAPEEE!!! - Kato googlest!",
+			"Paniikki: KAPEEE!!!  - Kato googlest!",
 			"Muut juoksi, Aleksi Talsi"
 			};
 	private Random rand = new Random();
@@ -53,8 +53,10 @@ public class MoikkausBotti extends AbstraktiBottiKuuntelija {
 		System.out.println("Uusi kayttaja " + nick + 
 				" liittyi kanavalle " + kanava);
 		
+		if (nick!=this.botti.annaNick()){
 		this.botti.lahetaViesti(this.tervetuloa(nick, kanava) + 
 				this.valitseVitsi(), kanava);
+		}
 	}
 	
 	@Override
@@ -75,8 +77,7 @@ public class MoikkausBotti extends AbstraktiBottiKuuntelija {
 		} else if (viesti.equals("!aleksi")){
 			vastaus = this.vitsit[6];
 		}
-		if (vastaus!=null /*&& lahettaja!=this.botti*/){
-			// TODO miten ilmoittaa, etta oma botti ei saa olla lahettaja?
+		if (vastaus!=null && lahettaja!=this.botti.annaNick()){
 			this.botti.lahetaViesti(vastaus, kanava);
 			return false;
 		} else {
