@@ -9,6 +9,8 @@ public class Botti2 extends PircBot implements HelppoBotti {
 	private KomentoriviUI ui;
 	
 	public Botti2() {
+		this.setVerbose( true );
+		
 		this.setLogin( "tester" );
 		
 		this.lisaaKaikkiKuuntelijat();
@@ -106,7 +108,8 @@ public class Botti2 extends PircBot implements HelppoBotti {
 	private void lisaaKaikkiKuuntelijat() {
 		BottiKuuntelija[] kuuntelijat = { new JaarittelijaBotti( this ),
 									      new Jtoiminto( this, this ),
-									      new MoikkausBotti( this ) };
+									      new MoikkausBotti( this ),
+									      new BottiKontrolli( this ) };
 		for( BottiKuuntelija kuuntelija : kuuntelijat ) {
 			this.kuuntelijat.add( kuuntelija );
 		}
@@ -126,6 +129,11 @@ public class Botti2 extends PircBot implements HelppoBotti {
 	@Override
 	public void lahetaViesti( String viesti, String kanava ) {
 		this.sendMessage( kanava, viesti );
+	}
+	
+	@Override
+	public String annaNick() {
+		return this.getNick();
 	}
 	
 	public static void main( String[] args ) {
