@@ -19,27 +19,27 @@ public class HuhuBotti extends AbstraktiBottiKuuntelija {
 	 */
 	public HuhuBotti( HelppoBotti botti ){
 		super(botti);
-		this.huhut[0] = "Tiesikkš, ettŠ Justus on sammunu Saaralle";
+		this.huhut[0] = "Tiesikkï¿½, ettï¿½ Justus on sammunu Saaralle";
 		this.huhut[1] = "Hei kuulitko, et Saaran lattialle sammu kerran " +
 				"ranskalainen vaihtari";
-		this.huhut[2] = "Kelaa, phuksien juhlasitseillŠ oliver kulki infon" +
-				"phuksityttšjen perŠssŠ vesilasi kŠdessŠ!";
-		this.huhut[3] = "Kuulin vŠhŠn juttuu et heppatyttš ysikaks ei oo tyttš" +
-				" eikŠ ysikaks..!";
-		this.huhut[4] = "Liikkuu vŠhŠn sellast juttuu et " + 
+		this.huhut[2] = "Kelaa, phuksien juhlasitseillï¿½ oliver kulki infon" +
+				"phuksityttï¿½jen perï¿½ssï¿½ vesilasi kï¿½dessï¿½!";
+		this.huhut[3] = "Kuulin vï¿½hï¿½n juttuu et heppatyttï¿½ ysikaks ei oo tyttï¿½" +
+				" eikï¿½ ysikaks..!";
+		this.huhut[4] = "Liikkuu vï¿½hï¿½n sellast juttuu et " + 
 				phuksiTytot[rand.nextInt(phuksiTytot.length)] + "on raskaana!!";
 		this.huhut[5] = phuksiJatkat[rand.nextInt(phuksiJatkat.length)] + " ei" +
 				" tainnu olla " + phuksiTytot[rand.nextInt(phuksiTytot.length)]
 						+ "n avec vaan viime sitseilla, kuulin ma...";
 		this.huhut[6] = "Mieti, HV:l on joskus ollu musta tukka ja se soitti " +
-				"bŠndis!";
-		this.huhut[7] = "Arvaa, Emmi ja Janne KŠki oli samas hotellihuoneessa" +
+				"bï¿½ndis!";
+		this.huhut[7] = "Arvaa, Emmi ja Janne Kï¿½ki oli samas hotellihuoneessa" +
 				" Virossa";
 		this.huhut[8] = phuksiJatkat[rand.nextInt(phuksiJatkat.length)] +
 				" sammu kuulemma tanssilattialle kesken viime bileiden!";
-		this.huhut[9] = "Tiesitkš et Merin haalarit on vŠrjŠtty siiderillŠ!";
+		this.huhut[9] = "Tiesitkï¿½ et Merin haalarit on vï¿½rjï¿½tty siiderillï¿½!";
 		this.huhut[10] = "Hei joku kerto et " + 
-				phuksiJatkat[rand.nextInt(phuksiJatkat.length)] + " tykkŠŠ " + 
+				phuksiJatkat[rand.nextInt(phuksiJatkat.length)] + " tykkï¿½ï¿½ " + 
 				phuksiTytot[rand.nextInt(phuksiTytot.length)] + "sta :)";
 
 	}
@@ -51,7 +51,7 @@ public class HuhuBotti extends AbstraktiBottiKuuntelija {
 	 */
 
 	public String annaHuhu(String[] huhut){
-		if(AbstraktiBottiKuuntelija.compareTo() == ?){
+		if(true){
 			int i = this.rand.nextInt(this.huhut.length);
 			return huhut[i];
 		}

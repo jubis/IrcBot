@@ -53,9 +53,10 @@ public class MoikkausBotti extends AbstraktiBottiKuuntelija {
 		System.out.println("Uusi kayttaja " + nick + 
 				" liittyi kanavalle " + kanava);
 		
+		System.out.println( this.botti.annaNick() );
 		if (!nick.equals(this.botti.annaNick())){
-		this.botti.lahetaViesti(this.tervetuloa(nick, kanava) + 
-				this.valitseVitsi(), kanava);
+			this.botti.lahetaViesti(this.tervetuloa(nick, kanava) + 
+					this.valitseVitsi(), kanava);
 		}
 	}
 	
