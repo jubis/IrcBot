@@ -19,27 +19,27 @@ public class HuhuBotti extends AbstraktiBottiKuuntelija {
 	 */
 	public HuhuBotti( HelppoBotti botti ){
 		super(botti);
-		this.huhut[0] = "Tiesikk�, ett� Justus on sammunu Saaralle";
+		this.huhut[0] = "Tiesikkö, että Justus on sammunu Saaralle";
 		this.huhut[1] = "Hei kuulitko, et Saaran lattialle sammu kerran " +
 				"ranskalainen vaihtari";
-		this.huhut[2] = "Kelaa, phuksien juhlasitseill� oliver kulki infon" +
-				"phuksitytt�jen per�ss� vesilasi k�dess�!";
-		this.huhut[3] = "Kuulin v�h�n juttuu et heppatytt� ysikaks ei oo tytt�" +
-				" eik� ysikaks..!";
-		this.huhut[4] = "Liikkuu v�h�n sellast juttuu et " + 
+		this.huhut[2] = "Kelaa, phuksien juhlasitseillä oliver kulki infon" +
+				"phuksityttöjen perässä vesilasi kädessä!";
+		this.huhut[3] = "Kuulin vähän juttuu et heppatyttä ysikaks ei oo tyttä" +
+				" eikä ysikaks..!";
+		this.huhut[4] = "Liikkuu vähän sellast juttuu et " + 
 				phuksiTytot[rand.nextInt(phuksiTytot.length)] + "on raskaana!!";
 		this.huhut[5] = phuksiJatkat[rand.nextInt(phuksiJatkat.length)] + " ei" +
 				" tainnu olla " + phuksiTytot[rand.nextInt(phuksiTytot.length)]
 						+ "n avec vaan viime sitseilla, kuulin ma...";
 		this.huhut[6] = "Mieti, HV:l on joskus ollu musta tukka ja se soitti " +
-				"b�ndis!";
-		this.huhut[7] = "Arvaa, Emmi ja Janne K�ki oli samas hotellihuoneessa" +
+				"bändis!";
+		this.huhut[7] = "Arvaa, Emmi ja Janne Käki oli samas hotellihuoneessa" +
 				" Virossa";
 		this.huhut[8] = phuksiJatkat[rand.nextInt(phuksiJatkat.length)] +
 				" sammu kuulemma tanssilattialle kesken viime bileiden!";
-		this.huhut[9] = "Tiesitk� et Merin haalarit on v�rj�tty siiderill�!";
+		this.huhut[9] = "Tiesitkä et Merin haalarit on värjätty siiderillä!";
 		this.huhut[10] = "Hei joku kerto et " + 
-				phuksiJatkat[rand.nextInt(phuksiJatkat.length)] + " tykk�� " + 
+				phuksiJatkat[rand.nextInt(phuksiJatkat.length)] + " tykkää " + 
 				phuksiTytot[rand.nextInt(phuksiTytot.length)] + "sta :)";
 
 	}
