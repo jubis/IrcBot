@@ -82,8 +82,11 @@ public class Botti2 extends PircBot implements HelppoBotti {
 	private void ilmoitaKuuntelijoilleViestista( String viesti,
 										String kanava,
 										String lahettaja ) {
+		System.out.println( "***" );
 		for( BottiKuuntelija kuuntelija : this.kuuntelijat ) {
+			System.out.println( kuuntelija );
 			if( kuuntelija.uusiViesti( viesti, kanava, lahettaja ) ) {
+				System.out.println( " katkaistu" );
 				// jos kuuntelija haluaa olla viimeinen, lopetetaan tähän
 				break;
 			}
@@ -96,7 +99,6 @@ public class Botti2 extends PircBot implements HelppoBotti {
  		}
  	}
 	
-	
 	private void ilmoitaKuuntelijoillePoistumisesta( String nick, String kanava ) {
  		for( BottiKuuntelija kuuntelija : this.kuuntelijat ) {
  			kuuntelija.kanavaltaLahtiKayttaja( nick, kanava );
@@ -107,7 +109,8 @@ public class Botti2 extends PircBot implements HelppoBotti {
 		BottiKuuntelija[] kuuntelijat = { new JaarittelijaBotti( this ),
 									      new Jtoiminto( this ),
 									      new MoikkausBotti( this ),
-									      new BottiKontrolli( this ) };
+									      new BottiKontrolli( this ),
+									      new HuhuBotti( this ) };
 		for( BottiKuuntelija kuuntelija : kuuntelijat ) {
 			this.kuuntelijat.add( kuuntelija );
 		}
@@ -121,7 +124,7 @@ public class Botti2 extends PircBot implements HelppoBotti {
 	}
 
 	private void jarjestaKuuntelijat() {
-		Collections.sort( this.kuuntelijat );
+		Collections.sort( this.kuuntelijat, Collections.reverseOrder() );
 	}
 	
 	@Override

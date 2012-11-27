@@ -122,7 +122,9 @@ public class Jtoiminto extends AbstraktiBottiKuuntelija {
 		//suljetaan virta
 		try {
 			virta.close();
-		} catch (IOException e) {}
+		} catch (IOException e) {
+			System.out.println( "Poikkeus suljettaessa virtaa" );
+		}
 
 		//jaetaan teksti osiin [extract]-tagin ja "...":n mukaan
 		String[] paluutaulu = teksti.split("extract]|(\\.\\.\\.)");
@@ -155,6 +157,7 @@ public class Jtoiminto extends AbstraktiBottiKuuntelija {
 		
 		//System.out.println(tulos);
 		this.botti.lahetaViesti(tulos, kanava);
+		System.out.println( tulos );
 		return true;
 	}
 
@@ -184,11 +187,7 @@ public class Jtoiminto extends AbstraktiBottiKuuntelija {
 	
 	public int annaPrioriteetti() {
 		//heitin jotain.
-		return 10;		
-	}
-
-	public int compareTo(BottiKuuntelija arg0) {	
-		return 0;
+		return 100;		
 	}
 
 	private String kysy() {
@@ -198,14 +197,6 @@ public class Jtoiminto extends AbstraktiBottiKuuntelija {
 			e.printStackTrace();
 			return null;
 		}
-	}
-
-	public void kanavallaUusiKayttaja(String nick, String kanava) {
-				
-	}
-
-	public void kanavaltaLahtiKayttaja(String nick, String kanava) {
-	
 	}
 
 //	public static void main(String[] args) {

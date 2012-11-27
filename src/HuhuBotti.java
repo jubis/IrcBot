@@ -3,7 +3,7 @@ import java.util.Random;
 
 
 public class HuhuBotti extends AbstraktiBottiKuuntelija {
-	private String[] huhut;
+	private String[] huhut = new String[11];
 	private Random rand = new Random();
 	private String[] phuksiTytot = {"Emmi", "Noora", "Saara", "Meri", "Joanna",
 			"Matilda", "Katriina", "Reetta", "Henni", "Nelli", "Eeva", "Hanna",
@@ -58,7 +58,23 @@ public class HuhuBotti extends AbstraktiBottiKuuntelija {
 		return "";
 	}
 
-	public void lahetaViesti(String viesti, String kanava){
+	@Override
+	public boolean uusiViesti( String viesti, String kanava, String lahettaja ) {
 		viesti = this.annaHuhu(huhut);
+		Random rand = new Random();
+		if( rand.nextDouble() < 0.2 ) {
+			this.botti.lahetaViesti( viesti, kanava );
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public void lahetaViesti(String viesti, String kanava){
+	}
+	
+	@Override
+	public int annaPrioriteetti() {
+		return 10;
 	}
 }

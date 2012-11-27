@@ -66,7 +66,12 @@ public class KomentoriviUI {
 	}
 	
 	private void liityKanavalle() {
-		this.botti.liityKanavalle( this.lueKomento( "Liity kanavalle:" ) );
+		do {
+			this.botti.liityKanavalle( this.lueKomento( "Liity kanavalle:" ) );
+			try {
+				Thread.sleep( 1000 );
+			} catch ( InterruptedException e ) {}
+		} while( this.botti.getChannels().length == 0 );
 	}
 	
 	private void kerroKanavat() {

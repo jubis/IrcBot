@@ -92,4 +92,9 @@ public class JaarittelijaBotti extends AbstraktiBottiKuuntelija {
 		
 		return false;
 	}
+	
+	@Override
+	public int annaPrioriteetti() {
+		return 1;
+	}
 }

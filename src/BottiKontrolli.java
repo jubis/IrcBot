@@ -14,8 +14,10 @@ public class BottiKontrolli extends AbstraktiBottiKuuntelija {
 		if( !viesti.trim().equals( "" ) && 
 			viesti.startsWith( this.botti.getNick() + ":" ) ) {
 			this.tulkkaa( viesti, kanava );
+			return true;
+		} else {
+			return false;
 		}
-		return true;
 	}
 	
 	private void tulkkaa( String komento, String kanava ) {

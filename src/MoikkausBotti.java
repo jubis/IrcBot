@@ -21,7 +21,7 @@ public class MoikkausBotti extends AbstraktiBottiKuuntelija {
 
 	// Suuri prioriteetti, jotta toteutetaan aina, kun uusi kayttaja tulee
 	public int annaPrioriteetti() {
-		return 1000;
+		return 20;
 	}
 	
 	// Botin heittamat tervetuloa-kommentit
@@ -53,7 +53,6 @@ public class MoikkausBotti extends AbstraktiBottiKuuntelija {
 		System.out.println("Uusi kayttaja " + nick + 
 				" liittyi kanavalle " + kanava);
 		
-		System.out.println( this.botti.annaNick() );
 		if (!nick.equals(this.botti.annaNick())){
 			this.botti.lahetaViesti(this.tervetuloa(nick, kanava) + 
 					this.valitseVitsi(), kanava);
