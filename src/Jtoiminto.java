@@ -36,7 +36,6 @@ public class Jtoiminto extends AbstraktiBottiKuuntelija {
 	 * Returns plain-text or limited HTML extracts of the given page(s)
 	 */
 	private int merkkimaara = 500;		
-	private HelppoBotti botti;
 	private BufferedReader lukija = new BufferedReader(new 
 			InputStreamReader(System.in));
 
@@ -98,6 +97,7 @@ public class Jtoiminto extends AbstraktiBottiKuuntelija {
 	}
 	
 	private boolean logiikka(String viesti, String kanava) {
+		
 		String[] viestiosina = viesti.split("\\s+");
 		String hakusana = null;
 		
@@ -108,10 +108,10 @@ public class Jtoiminto extends AbstraktiBottiKuuntelija {
 		
 		//teipataan url kasaan
 		URL url = teeUrl(annaApiurl() + hakusana);
-
+		
 		//tehdaan inputstream, jolla haetaan tavaraa netista
 		InputStream virta = avaaVirta(url);
-	
+		
 		if (virta == null) {
 			return false;
 		}
@@ -125,7 +125,7 @@ public class Jtoiminto extends AbstraktiBottiKuuntelija {
 		} catch (IOException e) {
 			System.out.println( "Poikkeus suljettaessa virtaa" );
 		}
-
+		
 		//jaetaan teksti osiin [extract]-tagin ja "...":n mukaan
 		String[] paluutaulu = teksti.split("extract]|(\\.\\.\\.)");
 
@@ -140,10 +140,12 @@ public class Jtoiminto extends AbstraktiBottiKuuntelija {
 			System.out.println("virhe");
 			return false;
 		}
+		
 		//null-tarkastus
 		if(tulos == null) {
 			return false;
 		}
+		
 		//jos tuloksessa on sana REDIRECT, haku on palauttanut redirect-sivun
 		if(tulos.contains("REDIRECT")){
 			this.botti.lahetaViesti("palautti redirect-sivun, yrita muotoilla uudestaan", kanava );
@@ -154,10 +156,7 @@ public class Jtoiminto extends AbstraktiBottiKuuntelija {
 		tulos += "...";
 
 		//printataan / lahetetaan tulos
-		
-		//System.out.println(tulos);
 		this.botti.lahetaViesti(tulos, kanava);
-		System.out.println( tulos );
 		return true;
 	}
 
